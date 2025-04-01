@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doños - Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Buttons -->
+    <nav class="main-nav">
+        <div class="nav-name"><h1>JODE'S</h1></div>
+        <div class="main-navs">
+            <button onclick="showSection('homepage')">Home</button>
+            <button onclick="showSection('portfolio')">Portfolio</button>
+            <button onclick="showSection('favorites')">Favorites</button>
+            <button onclick="showSection('about')">About</button>
+        </div>
+    </nav>
+
+    <!-- Homepage Section -->
+    <section id="homepage">
+        <div class="homepage-container">
+            <div class="carousel">
+                <div class="slides">
+                    <img src="pic4.jpg" alt="Profile 1" class="active">
+                    <img src="pic1.jpg" alt="Profile 2">
+                    <img src="pic3.jpg" alt="Profile 3">
+                    <img src="pic4.jpg" alt="Profile 4">
+                </div>
+                <button class="distribute-btn" onclick="nextSlide()">Next Photo</button>     
+            </div>
+            <div class="intro">
+                <h3>Hey, I’m Jodell D. Doños, or just <strong>JODE'S</strong>—whatever works.
+                 I’m 19, messing around with a Bachelor of Science in Information Technology at <strong>
+                Cebu Technological University</strong> - Argao Campus.<br>
+                <br> I crash in <strong>Cancainap, Argao, Cebu</strong>
+                . When I’m not stuck coding or thinking about stuff, I’m usually chilling with online games.</h3>
+                <h3>Hit me up on:<br><br></h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/jodell.dejan">
+                        <img src="fb.webp" alt="Facebook Logo" class="social-icon">
+                    </a>
+                    <a href="https://www.instagram.com/jodes_del/">
+                        <img src="insta.avif" alt="Instagram Logo" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="hidden">
+        <h2>Brain Master Challenge</h2>
+        <br>
+        <p>Pick your Choice</p>
+        <div class="challenge-buttons">
+            <button onclick="convertCelsiusToFahrenheit()">Temperature Converter</button>
+            <button onclick="CompareWord()">The Longer Word</button>
+            <button onclick="yourBirthStone()">Know My Birthstone</button>
+            <button onclick="BasicMathOps()">Basic Operators</button>
+            <button onclick="ComputeAcceleration()">Compute for Acceleration</button>
+        </div>
+    </section>
+
+    <!-- Favorites Section -->
+    <section id="favorites" class="hidden">
+        <iframe src="favs.html" width="100%" height="1850px" frameborder="0" scrolling="no" style="display: block;"></iframe>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="hidden"> 
+        <div class="about-container"> 
+            <div class="about-em">
+                <p>Hey, I’m <strong>Jodell D. Doños</strong>—19 years old and charging toward a Bachelor of Science in Information Technology at 
+                    <strong>Cebu Technological University - Argao Campus</strong>. I’m rooted in <strong>Cancainap, Argao, Cebu</strong>
+                    , and I’m kinda obsessed with tech—think web development, cutting-edge digital trends, and everything that makes the internet tick.<br><br>
+                    I’m in my second year, diving deep into programming, information management, networking, and web dev. My school projects? 
+                    They’ve sharpened my problem-solving and critical-thinking skills to a razor’s edge.<br><br>
+                    I wield a little bit <strong>HTML, CSS, and JavaScript</strong> 
+                    like tools of the trade. When I’m not conquering code, I’m dominating online games—my way of passing time and recharging.<br><br>
+                    My endgame? To rise as a SSS-Rank software developer, crafting groundbreaking projects that will *shape* the future. I’m relentless—always learning, always surpassing my limits of this fast-moving tech universe.</p>
+            </div>
+        </div> 
+    </section>
+
+    <script>
+        function convertCelsiusToFahrenheit() {
+            let num1 = parseFloat(prompt("Enter number of Celsius"));
+            let temp_F = (num1 * 1.8 + 32).toFixed(2);
+            alert(`${num1}°C converted into ${temp_F}°F`);
+        }
+
+        function ComputeAcceleration() {
+            let iv = parseFloat(prompt("Enter Initial Velocity in m/s or meter per second"));
+            let fv = parseFloat(prompt("Enter Final Velocity in m/s or meter per second"));
+            let ct = parseFloat(prompt("Enter Change in time in seconds"));
+            let acceleration = ((fv - iv) / ct).toFixed(2);
+            alert(`Acceleration is ${acceleration} meters every second.`);
+        }
+
+        function BasicMathOps() {
+            let num1 = parseFloat(prompt("Enter First Number"));
+            let num2 = parseFloat(prompt("Enter Second Number"));
+            let operator = prompt("Choose operator:\nM- Multiplication\nD- Division\nA- Addition\nS- Subtraction").toUpperCase();
+            let result;
+            switch(operator) {
+                case 'M':
+                    result = num1 * num2;
+                    break;
+                case 'D':
+                    if (num2 == 0) {
+                        result = "Second Number must not be zero or less than 0";
+                    } else {
+                        result = num1 / num2;
+                    }
+                    break;
+                case 'A':
+                    result = num1 + num2;
+                    break;
+                case 'S':
+                    result = num1 - num2;
+                    break;
+                default:
+                    result = "Invalid operator";
+                    break;
+            }
+            alert(`Result: ${result}`);
+        }
+
+        function yourBirthStone() {
+            let month = prompt("Enter your birthmonth (january, february...)").toLowerCase().trim();
+            let a;
+            switch(month) {
+                case "january":
+                    a = "Garnet";
+                    break;
+                case "february":
+                    a = "Amethyst";
+                    break;
+                case "march":
+                    a = "Aquamarine";
+                    break;
+                case "april":
+                    a = "Diamond";
+                    break;
+                case "may":
+                    a = "Emerald";
+                    break;
+                case "june":
+                    a = "Alexandrite & Pearl";
+                    break;
+                case "july":
+                    a = "Ruby";
+                    break;
+                case "august":
+                    a = "Peridot";
+                    break;
+                case "september":
+                    a = "Sapphire";
+                    break;
+                case "october":
+                    a = "Opal & Tourmaline";
+                    break;
+                case "november":
+                    a = "Citrine & Topaz";
+                    break;
+                case "december":
+                    a = "Blue Zircon, Turquoise, & Tanzanite";
+                    break;
+                default:
+                    alert("Invalid month input");
+                    return;
+            }
+            alert(`Your Birthstone is ${a}`);
+        }
+
+        function CompareWord() {
+            let fs = prompt("Enter first word").trim();
+            let ss = prompt("Enter second word").trim();
+            if (fs.length > ss.length) {
+                alert("The First Word is longer than Second Word");
+            } else if (fs.length < ss.length) {
+                alert("The Second Word is longer than First Word");
+            } else {
+                alert("The two Strings are equal");
+            }
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slides img');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Automatic carousel
+        function startCarousel() {
+            setInterval(() => {
+                nextSlide();
+            }, 1000); // Change slide every 1 second
+        }
+
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlide);
+            startCarousel();
+        });
+    </script>
+</body>
+</html>
