@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JODE'S GALLERY</title>
+    <link rel="stylesheet" href="gallery.css"/> 
+</head>
+<body>
+    <div id="content"> 
+        <h2 id="gallery-header">Favorites</h2>
+        <div id="art-exhibit"> 
+            
+            <!-- Artwork items start here -->
+            <div id="artwork-1" class="artwork">
+                <div class="grey"><span class="boldy">Hardcore Leveling Warrior</span><br>Author: Kim Sehoon</div> 
+                <div class="heart1" onclick="toggleLike(this)"><img src="he.png" class="tosmall"></div>
+                <div class="comments-section"> 
+                    <div class="comments"> 
+                        <ul class="comments-list"></ul> </div> 
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button onclick="addComment(this)">Post</button> 
+                </div>
+            </div>
+            
+            <!-- Similar structure for other artworks -->
+            <div id="artwork-2" class="artwork">
+                <div class="grey"><span class="boldy">Nano Machine</span><br>Author: Han Joong Wueol Ya</div> 
+                <div class="heart1" onclick="toggleLike(this)"><img src="he.png" class="tosmall"></div>
+                <div class="comments-section">
+                    <div class="comments"> 
+                    <ul class="comments-list"></ul> </div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button onclick="addComment(this)">Post</button>
+                </div>
+            </div>
+            
+            <div id="artwork-3" class="artwork">
+                <div class="grey"><span class="boldy">Tomb Raider King</span><br>Author: SAN.G</div>
+                <div class="heart1" onclick="toggleLike(this)"><img src="he.png" class="tosmall"></div>
+                <div class="comments-section">
+                    <div class="comments"> 
+                        <ul class="comments-list"></ul> </div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button onclick="addComment(this)">Post</button>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="gallery-header" style="margin-top: 150px;">Favorites</h2> 
+        <div id="art-exhibit"> 
+            
+            <!-- Artwork items start here -->
+            <div id="artwork-4" class="artwork">
+                <div class="grey"><span class="boldy">Viral Hit</span><br>Author: Taejun Pak</div> 
+                <div class="heart1" onclick="toggleLike(this)"><img src="he.png" class="tosmall"></div> 
+                <div class="comments-section"> 
+                    <div class="comments"> 
+                        <ul class="comments-list"></ul> </div> 
+                    <input type="text" class="comment-input" placeholder="Add a comment..."> 
+                    <button onclick="addComment(this)">Post</button> 
+                </div>
+            </div>
+            
+            <!-- Similar structure for other artworks -->
+            <div id="artwork-5" class="artwork">
+                <div class="grey"><span class="boldy">Leviathan</span><br>Author: Lee Gyuntak</div> 
+                <div class="heart1" onclick="toggleLike(this)"><img src="he.png" class="tosmall"></div>
+                <div class="comments-section">
+                    <div class="comments"> 
+                    <ul class="comments-list"></ul> </div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button onclick="addComment(this)">Post</button>
+                </div>
+            </div>
+            
+            <div id="artwork-6" class="artwork">
+                <div class="grey"><span class="boldy">Legend of the Northern Blade</span><br>Author: Hae-Min</div>
+                <div class="heart1" onclick="toggleLike(this)"><img src="he.png" class="tosmall"></div>
+                <div class="comments-section">
+                    <div class="comments"> 
+                        <ul class="comments-list"></ul> </div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button onclick="addComment(this)">Post</button>
+                </div>
+            </div>
+    </div>
+
+    <h2 id="gallery-header" style="margin-top: 150px;">Favorites</h2> 
+        <div id="art-exhibit"> 
+            <!-- Artwork items start here -->
+            <div id="artwork-7" class="artwork">
+                <div class="grey"><span class="boldy">The Boxer</span><br>Author: Jung Ji-Hoon</div> 
+                <div class="heart1" onclick="toggleLike(this)"><img src="he.png" class="tosmall"></div> 
+                <div class="comments-section">
+                    <div class="comments"> 
+                        <ul class="comments-list"></ul> </div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button onclick="addComment(this)">Post</button>
+                </div>
+            </div>
+            
+            <!-- Similar structure for other artworks -->
+            <div id="artwork-8" class="artwork">
+                <div class="grey"><span class="boldy">Solo Leveling</span><br>Author: Chu-Gong</div> 
+                <div class="heart1" onclick="toggleLike(this)"><img src="he.png" class="tosmall"></div>
+                <div class="comments-section">
+                    <div class="comments"> 
+                    <ul class="comments-list"></ul> </div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button onclick="addComment(this)">Post</button>
+                </div>
+            </div>
+            
+            <div id="artwork-9" class="artwork">
+                <div class="grey"><span class="boldy">Ordeal</span><br>Author: Brent Bristol</div>
+                <div class="heart1" onclick="toggleLike(this)"><img src="he.png" class="tosmall"></div>
+                <div class="comments-section">
+                    <div class="comments"> 
+                        <ul class="comments-list"></ul> </div>
+                    <input type="text" class="comment-input" placeholder="Add a comment...">
+                    <button onclick="addComment(this)">Post</button>
+                </div>
+            </div>
+    </div>
+
+    <script>
+        function toggleLike(element) {
+           
+            if (element.style.backgroundColor === "red") {
+                element.style.backgroundColor = "#EEF1F2"; 
+                element.style = "class= heart1";      
+                
+            } else {
+                element.style.backgroundColor = "red";
+            }
+        }
+
+        document.querySelectorAll('.comment-input').forEach(input => {
+        input.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' || event.keyCode === 13) {
+                event.preventDefault(); 
+                const postButton = input.nextElementSibling; 
+                if (postButton && postButton.tagName === 'BUTTON') {
+                    postButton.click(); 
+                }
+            }
+        });
+    });
+        function addComment(button) {
+            let commentInput = button.previousElementSibling;
+            let commentText = commentInput.value.trim(); 
+
+            if (commentText !== "") { 
+                let commentList = button.parentElement.querySelector(".comments-list");
+                let comments = commentList.querySelectorAll("li"); 
+
+                if (comments.length >= 4) {
+                    commentList.removeChild(commentList.firstElementChild);
+                }
+
+                let newComment = document.createElement("li");
+                newComment.textContent = commentText; 
+
+                commentList.appendChild(newComment);
+
+                commentInput.value = "";
+            } else {
+                alert("Please enter a comment before posting.");
+            }
+        }
+    </script>
+</body>
+</html>
